@@ -1,0 +1,39 @@
+.IndexPage {
+    $mobile-width: 540px;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100vw;
+    height: calc(100vh - 60px);
+
+    @media (max-width: $mobile-width) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 20%);
+    }
+
+    &__card {
+        position: relative;
+        display: flex;
+    }
+
+    &__card-image {
+        position: relative;
+        object-fit: cover;
+    }
+
+    &__card-label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-100%);
+
+        color: #ffffff;
+        font-size: 26px;
+        font-weight: bold;
+        font-style: italic;
+
+        @media (max-width: $mobile-width) {
+            transform: translate(-50%, -150%);
+        }
+    }
+}
